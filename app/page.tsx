@@ -7,14 +7,14 @@ export default function Home() {
         <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm mb-6 border border-blue-500/20">
           IP Geolocation API
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-cyan-300 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
           Know Where Your<br />Requests Come From
         </h1>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
           Accurate IP geolocation with country, city, ISP, timezone, and coordinates. One API key. Instant results.
         </p>
         <div className="flex gap-4 justify-center">
-          <a href="/api/auth/login?returnTo=/dashboard" className="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg font-medium transition">
+          <a href="/docs" className="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg font-medium transition">
             Get Free API Key
           </a>
           <Link href="/docs" className="border border-gray-700 hover:border-gray-500 px-6 py-3 rounded-lg font-medium transition">
@@ -72,7 +72,7 @@ export default function Home() {
               <div className="text-3xl font-bold mb-1">{p.price}<span className="text-sm text-gray-400 font-normal">/mo</span></div>
               <p className="text-sm text-gray-400 mb-4">{p.limit} · {p.keys}</p>
               <ul className="space-y-1 mb-6">{p.features.map(f => <li key={f} className="text-sm text-gray-300 flex items-center gap-2"><span className="text-blue-400">✓</span>{f}</li>)}</ul>
-              <a href="/api/auth/login?returnTo=/dashboard" className={`block text-center py-2.5 rounded-lg text-sm font-medium transition ${(p as any).highlight ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'border border-gray-700 hover:border-gray-500 text-gray-300'}`}>
+              <a href="/docs" className={`block text-center py-2.5 rounded-lg text-sm font-medium transition ${(p as any).highlight ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'border border-gray-700 hover:border-gray-500 text-white'}`}>
                 Get Started
               </a>
             </div>
