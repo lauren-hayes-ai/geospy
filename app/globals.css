@@ -1,12 +1,12 @@
-@import "tailwindcss";
-
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+html, body {
   background: #030712;
   color: #f9fafb;
   font-family: Inter, system-ui, sans-serif;
-  margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
