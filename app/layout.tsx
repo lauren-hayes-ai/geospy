@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "GeoSpy — IP Geolocation & Network Intelligence API",
-  description: "IP geolocation for country, city, ISP, timezone, and coordinates. Built for developers.",
+  title: "GeoSpy — IP Geolocation API",
+  description: "IP geolocation for country, city, ISP, timezone, and coordinates.",
+};
+
+const navStyle: React.CSSProperties = {
+  borderBottom: '1px solid #1e293b',
+  background: 'rgba(3,7,18,0.95)',
+  position: 'sticky', top: 0, zIndex: 50,
+};
+const navInner: React.CSSProperties = {
+  maxWidth: 1100, margin: '0 auto', padding: '0 32px',
+  height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-gray-950 text-gray-100 min-h-screen`}>
-        <nav className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-sm sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-emerald-400">
-              GeoSpy
-            </Link>
-            <div className="flex items-center gap-6">
-              <Link href="/docs" className="text-sm text-gray-400 hover:text-white transition">Docs</Link>
-              <Link href="/#pricing" className="text-sm text-gray-400 hover:text-white transition">Pricing</Link>
-              <Link href="/dashboard" className="text-sm text-gray-400 hover:text-white transition">Dashboard</Link>
-              <span className="text-sm bg-gray-700 px-4 py-2 rounded-lg text-gray-400 cursor-not-allowed">
-                Sign In (Auth0 pending)
-              </span>
+    <html lang="en">
+      <body style={{ margin: 0, background: '#030712', color: '#f1f5f9', fontFamily: 'Inter, system-ui, sans-serif' }}>
+        <nav style={navStyle}>
+          <div style={navInner}>
+            <Link href="/" style={{ fontSize: 18, fontWeight: 700, color: '#34d399', textDecoration: 'none' }}>GeoSpy</Link>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+              <Link href="/docs" style={{ fontSize: 14, color: '#64748b', textDecoration: 'none' }}>Docs</Link>
+              <Link href="/#pricing" style={{ fontSize: 14, color: '#64748b', textDecoration: 'none' }}>Pricing</Link>
+              <Link href="/dashboard" style={{ fontSize: 14, color: '#64748b', textDecoration: 'none' }}>Dashboard</Link>
+              <span style={{ fontSize: 14, color: '#475569', padding: '7px 18px', background: '#1e293b', borderRadius: 7 }}>Auth0 pending</span>
             </div>
           </div>
         </nav>
